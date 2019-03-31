@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colortheme">#ffcedf</color>
+    <color name="veryLightBackground">#FFF7FA</color>
+
+    <color name="chart1">#2471A3</color>
+    <color name="chart2">#28B463</color>
+    <color name="chart3">#DAF7A6</color>
+    <color name="chart4">#FFC300</color>
+    <color name="chart5">#FF5733</color>
+    <color name="chart6">#C70039</color>
+
+    <color name="chartsys">#138D75</color>
+    <color name="chartdys">#ABEBC6</color>
+</resources>

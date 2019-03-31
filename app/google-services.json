@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "694239719578",
+    "firebase_url": "https://swasthgarbh.firebaseio.com",
+    "project_id": "swasthgarbh",
+    "storage_bucket": "swasthgarbh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694239719578:android:30cd1a90eb7dd190",
+        "android_client_info": {
+          "package_name": "com.swasthgarbh.root.swasthgarbh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "694239719578-7hbuohsvg3s1e375jb9i2r87gji0d9u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM4HPzfTxicKhreycbcCwJu50KgWxfsDU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/colortheme"
+                android:ems="10"
+                android:hint="Name"
+                android:inputType="textPersonName">
+
+            </EditText>
+
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/colortheme"
+                android:ems="10"
+                android:hint="@string/address"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/colortheme"
+                android:ems="10"
+                android:hint="@string/age_in_years"
+                android:inputType="number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:backgroundTint="@color/colortheme"
+                    android:gravity="center"
+                    android:text="@string/last_mesntural_period" />
+
+                <EditText
+                    android:id="@+id/lmpDate"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="5"
+                    android:backgroundTint="@color/colortheme"
+                    android:focusable="false"
+                    android:hint="@string/date"
+                    android:inputType="none" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/some_extra_details_optional" />
+
+                    <CheckBox
+                        android:id="@+id/highbp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/history_of_high_blood_pressure_prior_to_pregnancy" />
+
+                    <CheckBox
+                        android:id="@+id/histPree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/a_history_of_preeclampsia" />
+
+                    <CheckBox
+                        android:id="@+id/motherPre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/having_a_mother_or_sister_who_had_preeclampsia" />
+
+                    <CheckBox
+                        android:id="@+id/histObes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/a_history_of_obesity" />
+
+                    <CheckBox
+                        android:id="@+id/moreThanOneBaby"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/carrying_more_than_one_baby" />
+
+                    <CheckBox
+                        android:id="@+id/diseases"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:text="@string/history_of_diabetes_kidney_disease_lupus_or_rheumatoid_arthritis" />
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/your_credentials"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:backgroundTint="@color/colortheme"
+                            android:gravity="center"
+                            android:text="+91 -" />
+
+                        <EditText
+                            android:id="@+id/editText5"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_weight="5"
+                            android:background="@drawable/rounded_edit_text"
+                            android:hint="@string/mobile"
+                            android:inputType="phone"
+                            android:paddingLeft="10dp" />
+
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/editText6"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/rounded_edit_text"
+                        android:ems="10"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="10dp" />
+
+                    <EditText
+                        android:id="@+id/editText4"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:ems="10"
+                        android:backgroundTint="@color/colortheme"
+                        android:hint="@string/email_optional"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Switch
+                        android:id="@+id/aiDoc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:backgroundTint="@color/colortheme"
+                        android:text="Doctor" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/normalDoc">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/spinner2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:backgroundTint="@color/colortheme"
+                                android:gravity="center"
+                                android:text="+91 -" />
+
+                            <EditText
+                                android:id="@+id/editText7"
+                                android:layout_width="0dp"
+                                android:layout_height="60dp"
+                                android:layout_weight="5"
+                                android:hint="@string/doctor_s_number"
+                                android:backgroundTint="@color/colortheme"
+                                android:inputType="phone" />
+
+
+                        </LinearLayout>
+
+
+                        <EditText
+                            android:id="@+id/editText10"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:backgroundTint="@color/colortheme"
+                            android:clickable="false"
+                            android:ems="10"
+                            android:focusable="false"
+                            android:hint="@string/doctor_s_name"
+                            android:inputType="none" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+
+            <Button
+
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/my_btn"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

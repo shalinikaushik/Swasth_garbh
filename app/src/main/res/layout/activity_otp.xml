@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1"
+    >
+
+
+    <FrameLayout
+        android:layout_below="@+id/bar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:id="@+id/otp_form"
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:backgroundTint="@color/colortheme"
+                android:id="@+id/new_pass"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Enter new password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:backgroundTint="@color/colortheme"
+                android:id="@+id/editTextotp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:hint="Enter OTP"
+                android:inputType="number" />
+
+            <Button
+                android:background="@drawable/my_btn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Send"
+                android:id="@+id/send_otp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gen_otp_form"
+            android:visibility="visible"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/smartphone"
+                    android:layout_gravity="center"/>
+
+                <EditText
+                    android:backgroundTint="@color/colortheme"
+                    android:id="@+id/mobile_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:ems="10"
+                    android:hint="Registered Mobile number"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/gen_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/my_btn"
+                android:drawableRight="@drawable/key"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Generate OTP  "
+                android:textAllCaps="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="* OTP would be sent to the mobile on which application was initially installed with this linked mobile number due to the senstivity and privacy of your health records. Please contact compbioiitr@gmail.com for furthur queries."
+                android:textStyle="italic"
+                android:textSize="11sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+
+
+</LinearLayout>

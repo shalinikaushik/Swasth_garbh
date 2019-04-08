@@ -1,9 +1,13 @@
 package com.swasthgarbh.root.swasthgarbh;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +34,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 
+import static android.app.PendingIntent.getActivity;
 import static com.swasthgarbh.root.swasthgarbh.patient_registration.session;
 
 public class WHOGuidelines extends AppCompatActivity {
@@ -40,10 +46,13 @@ public class WHOGuidelines extends AppCompatActivity {
     ProgressBar pb;
     Button updateWhoData;
     Calendar newDate1 = Calendar.getInstance();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whoguidelines);
+
 
         anc1_diabtese = (CheckBox) findViewById(R.id.anc1dia);
 //        anc1_diabtese.setOnClickListener(this);
@@ -140,6 +149,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_ultrasound.setChecked(response.getBoolean("anc1_ultrasound"));
                             anc1_tetnus.setChecked(response.getBoolean("anc1_tetnus"));
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
+
 
 
                             newDate1.add(Calendar.DATE, 56);

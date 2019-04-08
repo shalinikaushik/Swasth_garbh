@@ -1,5 +1,6 @@
 package com.swasthgarbh.root.swasthgarbh;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -14,12 +15,17 @@ import android.support.annotation.RequiresApi;
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 
 public class AlarmReceiver extends BroadcastReceiver{
-    private static final String CHANNEL_ID = "com.singhajit.notificationDemo.channelId";
+
+
+    private static final String CHANNEL_ID = "com.kaushikshalini.notificationDemo.channelId";
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onReceive(Context context, Intent intent) {
+
         Intent notificationIntent = new Intent(context, NotificationActivity.class);
+
+
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addParentStack(NotificationActivity.class);

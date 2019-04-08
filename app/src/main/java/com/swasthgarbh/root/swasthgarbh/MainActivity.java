@@ -23,21 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        Intent notificationIntent = new Intent(this, AlarmReceiver.class);
-        PendingIntent broadcast = PendingIntent.getBroadcast(this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.SECOND, 5);
-
-        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
-        alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
-        else if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
-            alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
-        else
-            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), broadcast);
 
         TextView patient_registration = (TextView)findViewById(R.id.patient_registration);
         patient_registration.setOnClickListener(new View.OnClickListener() {

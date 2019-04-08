@@ -90,6 +90,9 @@
         <activity android:name=".NotificationActivity" />
 
         <receiver android:name=".AlarmReceiver"/>
+
+
+
     </application>
 
 </manifest>

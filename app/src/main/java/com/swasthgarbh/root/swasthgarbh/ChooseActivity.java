@@ -1,7 +1,12 @@
 package com.swasthgarbh.root.swasthgarbh;
 
+import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -24,7 +29,16 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.ResourceBundle;
+
 public class ChooseActivity extends AppCompatActivity implements View.OnClickListener {
+
+
 
     AlertDialogManager alert = new AlertDialogManager();
     Button doctor, patient, sign_in, login, send_otp;
@@ -38,6 +52,8 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
     EditText gen_otp_mobile, new_pass, editTextotp;
     int otp_id;
     Dialog otp_dialog, dis_dialog;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,15 +71,58 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
         sign_in.setOnClickListener(this);
         disclaimer.setOnClickListener(this);
         ancAssist.setOnClickListener(this);
+
+
+        AlarmManager alarmManager = (AlarmManager) getSystemService (Context.ALARM_SERVICE);
+
+        Intent notificationIntent = new Intent (this, AlarmReceiver.class);
+        PendingIntent broadcast = PendingIntent.getBroadcast (this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+        Calendar cal = Calendar.getInstance ( );
+
+        ResourceBundle response = null;
+        TextView lmpDate = (TextView) findViewById(R.id.lmpDate);
+        assert response != null;
+        String date_date = response.getString("startDate").split("T")[0].split("-")[2];
+        String date_month = response.getString("startDate").split("T")[0].split("-")[1];
+        String date_year = response.getString("startDate").split("T")[0].split("-")[0];
+
+        String lmpDateString = date_date + "/" + date_month + "/" + date_year;
+        String eddDateString = date_year + "/" + date_month + "/" + date_date;
+
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        Date d = null;
+        try {
+            d = sdf.parse(lmpDateString);
+        } catch (ParseException e) {
+            e.printStackTrace ( );
+        }
+
+        lmpDate.setText(sdf.format(d));
+        cal.setTime(d);
+       cal.add(Calendar.DATE, 82);
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+            alarmManager.set (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+        else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+            alarmManager.setExact (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+        else
+            alarmManager.setExactAndAllowWhileIdle (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+
     }
+
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+        Intent intent = new Intent (Intent.ACTION_MAIN);
+        intent.addCategory (Intent.CATEGORY_HOME);
+        intent.setFlags (Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity (intent);
+
     }
+
 
     @Override
     public void onClick(View view) {
@@ -135,6 +194,9 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
         ApplicationController.getInstance().addToRequestQueue(jsonObjReq);
 
     }
+
+
+
 
     private void callOTPDialog() {
 
@@ -400,6 +462,7 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
                             return params.toString().getBytes();
 
                         }
+
                     };
                     ApplicationController.getInstance().addToRequestQueue(jsonObjReq);
                 }

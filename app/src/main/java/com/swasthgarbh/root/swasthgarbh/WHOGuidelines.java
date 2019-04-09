@@ -115,6 +115,7 @@ public class WHOGuidelines extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         Log.d("apihit", response.toString());
                         try {
+                            AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
                             TextView lmpDate = (TextView) findViewById(R.id.lmpDate);
                             TextView eddDate = (TextView) findViewById(R.id.eddDate);
@@ -133,9 +134,9 @@ public class WHOGuidelines extends AppCompatActivity {
 
                             String lmpDateString = date_date + "/" + date_month + "/" + date_year;
                             String eddDateString = date_year + "/" + date_month + "/" + date_date;
-
-                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                             Calendar c = Calendar.getInstance();
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 //                            newDate1.set(Integer.parseInt(date_year), Integer.parseInt(date_month), Integer.parseInt(date_date));
                             Date d = sdf.parse(lmpDateString);
                             newDate1.setTime(d);
@@ -150,12 +151,17 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_tetnus.setChecked(response.getBoolean("anc1_tetnus"));
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
 
-
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             newDate1.add(Calendar.DATE, 56);
                             anc2Date.setText("20 Weeks - " + sdf.format(newDate1.getTime()));
                             anc2_diabtese.setChecked(response.getBoolean("anc2_diabtese"));
                             anc2_anemia.setChecked(response.getBoolean("anc2_anemia"));
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
 
                             newDate1.add(Calendar.DATE, 42);
@@ -163,34 +169,51 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc3_diabtese.setChecked(response.getBoolean("anc3_diabtese"));
                             anc3_anemia.setChecked(response.getBoolean("anc3_anemia"));
                             anc3_urine.setChecked(response.getBoolean("anc3_urine"));
-
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             newDate1.add(Calendar.DATE, 28);
                             anc4Date.setText("30 Weeks - " + sdf.format(newDate1.getTime()));
                             anc4_diabtese.setChecked(response.getBoolean("anc4_diabtese"));
-
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             newDate1.add(Calendar.DATE, 28);
                             anc5Date.setText("34 Weeks - " + sdf.format(newDate1.getTime()));
                             anc5_diabtese.setChecked(response.getBoolean("anc5_diabtese"));
                             anc5_urine.setChecked(response.getBoolean("anc5_urine"));
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             newDate1.add(Calendar.DATE, 14);
                             anc6Date.setText("36 Weeks - " + sdf.format(newDate1.getTime()));
                             anc6_diabtese.setChecked(response.getBoolean("anc6_diabtese"));
                             anc6_anemia.setChecked(response.getBoolean("anc6_anemia"));
-
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             newDate1.add(Calendar.DATE, 14);
                             anc7Date.setText("38 Weeks - " + sdf.format(newDate1.getTime()));
                             anc7_diabtese.setChecked(response.getBoolean("anc7_diabtese"));
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
 
                             newDate1.add(Calendar.DATE, 16);
                             anc8Date.setText("40 Weeks - " + sdf.format(newDate1.getTime()));
                             anc8_diabtese.setChecked(response.getBoolean("anc8_diabtese"));
+                            c = newDate1;
+                            c.add(Calendar.DATE,-2);
+                            setNotification(manager,c);
 
                             eddDate.setText(sdf.format(newDate1.getTime()));
+                            //set notifications
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (ParseException e) {
@@ -234,7 +257,13 @@ public class WHOGuidelines extends AppCompatActivity {
             }
         });
     }
+    public void setNotification(AlarmManager manager,Calendar c){
+        Intent alarmIntent = new Intent(this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
 
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY, pendingIntent);
+    }
     public void updateWhoData(){
         pb.setVisibility(View.VISIBLE);
         updateWhoData.setVisibility(View.GONE);

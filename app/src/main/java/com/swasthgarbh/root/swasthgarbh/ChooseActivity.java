@@ -84,32 +84,32 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
         ResourceBundle response = null;
         TextView lmpDate = (TextView) findViewById(R.id.lmpDate);
         assert response != null;
-        String date_date = response.getString("startDate").split("T")[0].split("-")[2];
-        String date_month = response.getString("startDate").split("T")[0].split("-")[1];
-        String date_year = response.getString("startDate").split("T")[0].split("-")[0];
-
-        String lmpDateString = date_date + "/" + date_month + "/" + date_year;
-        String eddDateString = date_year + "/" + date_month + "/" + date_date;
-
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-        Date d = null;
-        try {
-            d = sdf.parse(lmpDateString);
-        } catch (ParseException e) {
-            e.printStackTrace ( );
-        }
-
-        lmpDate.setText(sdf.format(d));
-        cal.setTime(d);
-       cal.add(Calendar.DATE, 82);
-
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
-            alarmManager.set (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
-        else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
-            alarmManager.setExact (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
-        else
-            alarmManager.setExactAndAllowWhileIdle (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+//        String date_date = response.getString("startDate").split("T")[0].split("-")[2];
+//        String date_month = response.getString("startDate").split("T")[0].split("-")[1];
+//        String date_year = response.getString("startDate").split("T")[0].split("-")[0];
+//
+//        String lmpDateString = date_date + "/" + date_month + "/" + date_year;
+//        String eddDateString = date_year + "/" + date_month + "/" + date_date;
+//
+//        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//
+//        Date d = null;
+//        try {
+//            d = sdf.parse(lmpDateString);
+//        } catch (ParseException e) {
+//            e.printStackTrace ( );
+//        }
+//
+//        lmpDate.setText(sdf.format(d));
+//        cal.setTime(d);
+//       cal.add(Calendar.DATE, 84);
+//
+//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
+//            alarmManager.set (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+//        else if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+//            alarmManager.setExact (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
+//        else
+//            alarmManager.setExactAndAllowWhileIdle (AlarmManager.RTC_WAKEUP, cal.getTimeInMillis ( ), broadcast);
 
     }
 

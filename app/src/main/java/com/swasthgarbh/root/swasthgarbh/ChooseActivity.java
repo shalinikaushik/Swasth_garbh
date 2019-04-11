@@ -72,18 +72,18 @@ public class ChooseActivity extends AppCompatActivity implements View.OnClickLis
         disclaimer.setOnClickListener(this);
         ancAssist.setOnClickListener(this);
 
-
-        AlarmManager alarmManager = (AlarmManager) getSystemService (Context.ALARM_SERVICE);
-
-        Intent notificationIntent = new Intent (this, AlarmReceiver.class);
-        PendingIntent broadcast = PendingIntent.getBroadcast (this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-
-        Calendar cal = Calendar.getInstance ( );
-
-        ResourceBundle response = null;
-        TextView lmpDate = (TextView) findViewById(R.id.lmpDate);
-        assert response != null;
+//
+//        AlarmManager alarmManager = (AlarmManager) getSystemService (Context.ALARM_SERVICE);
+//
+//        Intent notificationIntent = new Intent (this, AlarmReceiver.class);
+//        PendingIntent broadcast = PendingIntent.getBroadcast (this, 100, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+//
+//
+//        Calendar cal = Calendar.getInstance ( );
+//
+//        ResourceBundle response = null;
+//        TextView lmpDate = (TextView) findViewById(R.id.lmpDate);
+//        assert response != null;
 //        String date_date = response.getString("startDate").split("T")[0].split("-")[2];
 //        String date_month = response.getString("startDate").split("T")[0].split("-")[1];
 //        String date_year = response.getString("startDate").split("T")[0].split("-")[0];

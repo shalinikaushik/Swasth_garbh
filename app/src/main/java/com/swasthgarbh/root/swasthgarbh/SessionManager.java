@@ -58,7 +58,6 @@ public class SessionManager {
             Intent i = new Intent(_context, ChooseActivity.class);
             _context.startActivity(i);
         }
-
     }
 
     public HashMap<String, String> getUserDetails(){
@@ -72,7 +71,6 @@ public class SessionManager {
         user.put(KEY_ID, Integer.toString(pref.getInt(KEY_ID, 0)));
 
         Log.d("DATA", user.toString());
-
 
         return user;
     }

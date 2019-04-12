@@ -21,4 +21,13 @@ public class NotificationActivity extends Activity {
 
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this , "com.kaushikshalini.notificationDemo.channelId");
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(this,patient_registration.class);
+        startActivity(intent);
+        finish();
+
+    }
 }

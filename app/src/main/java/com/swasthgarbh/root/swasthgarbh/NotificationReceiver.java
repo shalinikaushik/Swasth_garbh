@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.util.Log;
 
 import static android.app.NotificationManager.IMPORTANCE_DEFAULT;
 
@@ -50,7 +51,6 @@ public class NotificationReceiver extends BroadcastReceiver {
             );
             notificationManager.createNotificationChannel(channel);
         }
-
-        notificationManager.notify(0, notification);
+        notificationManager.notify(intent.getIntExtra("Key",0), notification);
     }
 }

@@ -154,7 +154,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             c.add(Calendar.DATE,-2);
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
-                                
+
                                 Calendar c1 = (Calendar) c.clone();
                                 c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
@@ -188,6 +188,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
                                 Calendar c1 = (Calendar) c.clone();
+                                
                                 c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){

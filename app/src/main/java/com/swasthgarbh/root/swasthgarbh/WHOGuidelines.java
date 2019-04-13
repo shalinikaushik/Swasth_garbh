@@ -46,7 +46,7 @@ public class WHOGuidelines extends AppCompatActivity {
     ProgressBar pb;
     Button updateWhoData;
     Calendar newDate1 = Calendar.getInstance();
-
+    int key=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,8 +140,12 @@ public class WHOGuidelines extends AppCompatActivity {
 //                            newDate1.set(Integer.parseInt(date_year), Integer.parseInt(date_month), Integer.parseInt(date_date));
                             Date d = sdf.parse(lmpDateString);
                             newDate1.setTime(d);
+                            newDate1.set(Calendar.HOUR,9);
+                            newDate1.set(Calendar.MINUTE,0);
+                            newDate1.set(Calendar.SECOND,0);
+                            newDate1.set(Calendar.AM_PM,Calendar.AM);
+
                             lmpDate.setText(sdf.format(d));
-                            newDate1.add(Calendar.DATE,2);
                             newDate1.add(Calendar.DATE, 84);
                             anc1Date.setText("12 Weeks - " + sdf.format(newDate1.getTime()));
                             anc1_diabtese.setChecked(response.getBoolean("anc1_diabtese"));
@@ -150,42 +154,22 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_ultrasound.setChecked(response.getBoolean("anc1_ultrasound"));
                             anc1_tetnus.setChecked(response.getBoolean("anc1_tetnus"));
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
-<<<<<<< HEAD
-
-                            c = newDate1;
-                            c.add(Calendar.DATE,1);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
-=======
                             c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
+
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
-
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                if(c.compareTo(Calendar.getInstance())>0){
-                                   setNotification(manager,c,1);
-                                   setNotification(manager,c1,2);
+                                   setNotification(manager,c,key);
                                }
                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                //but less than newDate1
                                else {
-
-                                   if(c1.compareTo(Calendar.getInstance())>0) {
-                                       setNotification(manager, Calendar.getInstance(), 3);
-                                       setNotification(manager, c1, 4);
-                                   }
-                                   else{
-                                       setNotification(manager,Calendar.getInstance(),3);
-                                   }
+                                   setNotification(manager,Calendar.getInstance(),++key);
                                }
 
 
->>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
 
                             newDate1.add(Calendar.DATE, 56);
@@ -197,26 +181,14 @@ public class WHOGuidelines extends AppCompatActivity {
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,5);
-                                     setNotification(manager,c1,6);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
@@ -228,43 +200,24 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc3_diabtese.setChecked(response.getBoolean("anc3_diabtese"));
                             anc3_anemia.setChecked(response.getBoolean("anc3_anemia"));
                             anc3_urine.setChecked(response.getBoolean("anc3_urine"));
-<<<<<<< HEAD
-                            c = newDate1;
-                            //c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
-=======
                             c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,9);
-                                     setNotification(manager,c1,10);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
->>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
+
 
                             newDate1.add(Calendar.DATE, 28);
                             anc4Date.setText("30 Weeks - " + sdf.format(newDate1.getTime()));
@@ -272,31 +225,21 @@ public class WHOGuidelines extends AppCompatActivity {
                             c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
                             //when current date is less than newDate1
-                            if(newDate1.compareTo(Calendar.getInstance())>0){
+                            if(newDate1.compareTo(Calendar.getInstance())>0) {
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
+
                                 //when current date is before c(i.e. 2 days before newDate1)
-                                if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,13);
-                                    setNotification(manager,c1,14);
-
+                                if (c.compareTo(Calendar.getInstance()) > 0) {
+                                    setNotification(manager, c, ++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager, Calendar.getInstance(), ++key);
                                 }
 
-
                             }
+
 
                             newDate1.add(Calendar.DATE, 28);
                             anc5Date.setText("34 Weeks - " + sdf.format(newDate1.getTime()));
@@ -307,29 +250,19 @@ public class WHOGuidelines extends AppCompatActivity {
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,17);
-                                    setNotification(manager,c1,18);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
                             }
+
 
 
                             newDate1.add(Calendar.DATE, 14);
@@ -341,29 +274,19 @@ public class WHOGuidelines extends AppCompatActivity {
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,21);
-                                    setNotification(manager,c1,22);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
                             }
+
 
                             newDate1.add(Calendar.DATE, 14);
                             anc7Date.setText("38 Weeks - " + sdf.format(newDate1.getTime()));
@@ -373,29 +296,19 @@ public class WHOGuidelines extends AppCompatActivity {
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,25);
-                                    setNotification(manager,c1,26);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
                             }
+
 
 
                             newDate1.add(Calendar.DATE, 16);
@@ -406,29 +319,19 @@ public class WHOGuidelines extends AppCompatActivity {
                             //when current date is less than newDate1
                             if(newDate1.compareTo(Calendar.getInstance())>0){
 
-                                Calendar c1 = (Calendar) c.clone();
-                                c1.add(Calendar.DATE,1);
                                 //when current date is before c(i.e. 2 days before newDate1)
                                 if(c.compareTo(Calendar.getInstance())>0){
-                                    setNotification(manager,c,29);
-                                    setNotification(manager,c1,30);
-
+                                    setNotification(manager,c,++key);
                                 }
                                 //when current date is greater than or equal to c(i.e. 2 days before newDate1)
                                 //but less than newDate1
                                 else {
-                                    if(c1.compareTo(Calendar.getInstance())>0) {
-                                        setNotification(manager, Calendar.getInstance(), 3);
-                                        setNotification(manager, c1, 4);
-                                    }
-                                    else{
-                                        setNotification(manager,Calendar.getInstance(),3);
-                                    }
-
+                                    setNotification(manager,Calendar.getInstance(),++key);
                                 }
 
 
                             }
+
 
 
                             eddDate.setText(sdf.format(newDate1.getTime()));

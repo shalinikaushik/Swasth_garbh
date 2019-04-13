@@ -382,10 +382,8 @@ public class WHOGuidelines extends AppCompatActivity {
     }
     public void setNotification(AlarmManager manager,Calendar c,int key){
         Intent alarmIntent = new Intent(this, NotificationReceiver.class);
-        Log.e("KEY", String.valueOf(key));
         alarmIntent.putExtra("Key",key);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, key, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
-
         manager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
     public void updateWhoData(){

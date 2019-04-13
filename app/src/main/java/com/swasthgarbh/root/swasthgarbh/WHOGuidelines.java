@@ -152,7 +152,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
 
                             c = newDate1;
-                            c.add(Calendar.DATE,-2);
+                            c.add(Calendar.DATE,1);
                             if(c.compareTo(Calendar.getInstance())<0)
                                 setNotification(manager,c);
                             else{
@@ -178,7 +178,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc3_anemia.setChecked(response.getBoolean("anc3_anemia"));
                             anc3_urine.setChecked(response.getBoolean("anc3_urine"));
                             c = newDate1;
-                            c.add(Calendar.DATE,-2);
+                            //c.add(Calendar.DATE,-2);
                             if(c.compareTo(Calendar.getInstance())<0)
                                 setNotification(manager,c);
                             else{

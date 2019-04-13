@@ -150,6 +150,15 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_ultrasound.setChecked(response.getBoolean("anc1_ultrasound"));
                             anc1_tetnus.setChecked(response.getBoolean("anc1_tetnus"));
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
+<<<<<<< HEAD
+
+                            c = newDate1;
+                            c.add(Calendar.DATE,1);
+                            if(c.compareTo(Calendar.getInstance())<0)
+                                setNotification(manager,c);
+                            else{
+                                setNotification(manager,Calendar.getInstance());
+=======
                             c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
                             //when current date is less than newDate1
@@ -176,6 +185,7 @@ public class WHOGuidelines extends AppCompatActivity {
                                }
 
 
+>>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
 
                             newDate1.add(Calendar.DATE, 56);
@@ -218,6 +228,14 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc3_diabtese.setChecked(response.getBoolean("anc3_diabtese"));
                             anc3_anemia.setChecked(response.getBoolean("anc3_anemia"));
                             anc3_urine.setChecked(response.getBoolean("anc3_urine"));
+<<<<<<< HEAD
+                            c = newDate1;
+                            //c.add(Calendar.DATE,-2);
+                            if(c.compareTo(Calendar.getInstance())<0)
+                                setNotification(manager,c);
+                            else{
+                                setNotification(manager,Calendar.getInstance());
+=======
                             c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
                             //when current date is less than newDate1
@@ -245,6 +263,7 @@ public class WHOGuidelines extends AppCompatActivity {
                                 }
 
 
+>>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
 
                             newDate1.add(Calendar.DATE, 28);

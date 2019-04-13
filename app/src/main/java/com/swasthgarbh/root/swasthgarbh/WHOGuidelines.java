@@ -141,7 +141,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             Date d = sdf.parse(lmpDateString);
                             newDate1.setTime(d);
                             lmpDate.setText(sdf.format(d));
-
+                            newDate1.add(Calendar.DATE,2);
                             newDate1.add(Calendar.DATE, 84);
                             anc1Date.setText("12 Weeks - " + sdf.format(newDate1.getTime()));
                             anc1_diabtese.setChecked(response.getBoolean("anc1_diabtese"));
@@ -150,6 +150,7 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc1_ultrasound.setChecked(response.getBoolean("anc1_ultrasound"));
                             anc1_tetnus.setChecked(response.getBoolean("anc1_tetnus"));
                             anc1_urine.setChecked(response.getBoolean("anc1_urine"));
+<<<<<<< HEAD
 
                             c = newDate1;
                             c.add(Calendar.DATE,1);
@@ -157,18 +158,67 @@ public class WHOGuidelines extends AppCompatActivity {
                                 setNotification(manager,c);
                             else{
                                 setNotification(manager,Calendar.getInstance());
+=======
+                            c = (Calendar) newDate1.clone();
+                            c.add(Calendar.DATE,-2);
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+                                
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                               if(c.compareTo(Calendar.getInstance())>0){
+                                   setNotification(manager,c,1);
+                                   setNotification(manager,c1,2);
+                               }
+                               //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                               //but less than newDate1
+                               else {
+
+                                   if(c1.compareTo(Calendar.getInstance())>0) {
+                                       setNotification(manager, Calendar.getInstance(), 3);
+                                       setNotification(manager, c1, 4);
+                                   }
+                                   else{
+                                       setNotification(manager,Calendar.getInstance(),3);
+                                   }
+                               }
+
+
+>>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
 
                             newDate1.add(Calendar.DATE, 56);
                             anc2Date.setText("20 Weeks - " + sdf.format(newDate1.getTime()));
                             anc2_diabtese.setChecked(response.getBoolean("anc2_diabtese"));
                             anc2_anemia.setChecked(response.getBoolean("anc2_anemia"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,5);
+                                     setNotification(manager,c1,6);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
 
 
@@ -177,71 +227,208 @@ public class WHOGuidelines extends AppCompatActivity {
                             anc3_diabtese.setChecked(response.getBoolean("anc3_diabtese"));
                             anc3_anemia.setChecked(response.getBoolean("anc3_anemia"));
                             anc3_urine.setChecked(response.getBoolean("anc3_urine"));
+<<<<<<< HEAD
                             c = newDate1;
                             //c.add(Calendar.DATE,-2);
                             if(c.compareTo(Calendar.getInstance())<0)
                                 setNotification(manager,c);
                             else{
                                 setNotification(manager,Calendar.getInstance());
+=======
+                            c = (Calendar) newDate1.clone();
+                            c.add(Calendar.DATE,-2);
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,9);
+                                     setNotification(manager,c1,10);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
+>>>>>>> 0fec5bed4465aa5ddeb7c7c9ecd5ecc0a4ae2bcb
                             }
 
                             newDate1.add(Calendar.DATE, 28);
                             anc4Date.setText("30 Weeks - " + sdf.format(newDate1.getTime()));
                             anc4_diabtese.setChecked(response.getBoolean("anc4_diabtese"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,13);
+                                    setNotification(manager,c1,14);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
 
                             newDate1.add(Calendar.DATE, 28);
                             anc5Date.setText("34 Weeks - " + sdf.format(newDate1.getTime()));
                             anc5_diabtese.setChecked(response.getBoolean("anc5_diabtese"));
                             anc5_urine.setChecked(response.getBoolean("anc5_urine"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,17);
+                                    setNotification(manager,c1,18);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
+
 
                             newDate1.add(Calendar.DATE, 14);
                             anc6Date.setText("36 Weeks - " + sdf.format(newDate1.getTime()));
                             anc6_diabtese.setChecked(response.getBoolean("anc6_diabtese"));
                             anc6_anemia.setChecked(response.getBoolean("anc6_anemia"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,21);
+                                    setNotification(manager,c1,22);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
 
                             newDate1.add(Calendar.DATE, 14);
                             anc7Date.setText("38 Weeks - " + sdf.format(newDate1.getTime()));
                             anc7_diabtese.setChecked(response.getBoolean("anc7_diabtese"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,25);
+                                    setNotification(manager,c1,26);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
 
 
                             newDate1.add(Calendar.DATE, 16);
                             anc8Date.setText("40 Weeks - " + sdf.format(newDate1.getTime()));
                             anc8_diabtese.setChecked(response.getBoolean("anc8_diabtese"));
-                            c = newDate1;
+                            c = (Calendar) newDate1.clone();
                             c.add(Calendar.DATE,-2);
-                            if(c.compareTo(Calendar.getInstance())<0)
-                                setNotification(manager,c);
-                            else{
-                                setNotification(manager,Calendar.getInstance());
+                            //when current date is less than newDate1
+                            if(newDate1.compareTo(Calendar.getInstance())>0){
+
+                                Calendar c1 = (Calendar) c.clone();
+                                c1.add(Calendar.DATE,1);
+                                //when current date is before c(i.e. 2 days before newDate1)
+                                if(c.compareTo(Calendar.getInstance())>0){
+                                    setNotification(manager,c,29);
+                                    setNotification(manager,c1,30);
+
+                                }
+                                //when current date is greater than or equal to c(i.e. 2 days before newDate1)
+                                //but less than newDate1
+                                else {
+                                    if(c1.compareTo(Calendar.getInstance())>0) {
+                                        setNotification(manager, Calendar.getInstance(), 3);
+                                        setNotification(manager, c1, 4);
+                                    }
+                                    else{
+                                        setNotification(manager,Calendar.getInstance(),3);
+                                    }
+
+                                }
+
+
                             }
+
 
                             eddDate.setText(sdf.format(newDate1.getTime()));
                             //set notifications
@@ -289,12 +476,13 @@ public class WHOGuidelines extends AppCompatActivity {
             }
         });
     }
-    public void setNotification(AlarmManager manager,Calendar c){
+    public void setNotification(AlarmManager manager,Calendar c,int key){
         Intent alarmIntent = new Intent(this, NotificationReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+        Log.e("KEY", String.valueOf(key));
+        alarmIntent.putExtra("Key",key);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, key, alarmIntent, PendingIntent.FLAG_ONE_SHOT);
 
-        manager.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),
-                AlarmManager.INTERVAL_DAY, pendingIntent);
+        manager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pendingIntent);
     }
     public void updateWhoData(){
         pb.setVisibility(View.VISIBLE);

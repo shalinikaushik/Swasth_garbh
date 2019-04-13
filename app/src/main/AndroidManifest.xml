@@ -96,7 +96,8 @@
         </provider>
         <activity android:name=".NotificationActivity" />
 
-        <receiver android:name=".AlarmReceiver"/>
+        <receiver android:name=".AlarmReceiver"
+            />
 
 
 

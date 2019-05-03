@@ -26,6 +26,11 @@
                 app:showAsAction="ifRoom"
                 android:title="ANC Assist" />
 
+            <item android:id="@+id/registered_patient"
+                android:icon="@drawable/pregnant"
+                app:showAsAction="ifRoom"
+                android:title="Register Patient" />
+
             <item android:id="@+id/action_logout"
                 android:icon="@drawable/logout"
                 app:showAsAction="ifRoom"

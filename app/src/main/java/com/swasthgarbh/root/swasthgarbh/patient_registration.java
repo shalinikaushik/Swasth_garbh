@@ -497,6 +497,7 @@ public class patient_registration extends AppCompatActivity {
                             }else{
                                 doctorId = response.getInt("doctor");
                             }
+
                             patientName.setText(response.getString("name"));
                             whoFollowing.setText(response.getString("who_following"));
                             String date = response.getString("lmp").split("T")[0].split("-")[2] + "-" + response.getString("lmp").split("T")[0].split("-")[1] + "-" + response.getString("lmp").split("T")[0].split("-")[0];
@@ -526,6 +527,8 @@ public class patient_registration extends AppCompatActivity {
                                     jo.put("time_stamp", "2018-" + String.valueOf((int)(Math.random() * 12 + 1)) + "-" + String.valueOf((int)(Math.random() * 30 + 1)) + "T01:25:37.199340+05:30");
                                     jo.put("pk", session.getUserDetails().get("id"));
                                     ja.put(jo);
+
+
                                 }
                                 Log.i("dataaaaaaa", "onResponse: " + ja);
                                 patientBpData = ja;

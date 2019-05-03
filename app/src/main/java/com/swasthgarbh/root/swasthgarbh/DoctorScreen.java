@@ -93,6 +93,10 @@ public class DoctorScreen extends AppCompatActivity {
             i = new Intent(this, ANC_Assist.class);
             startActivity(i);
         }
+        else if (item.getItemId() == R.id.registered_patient) {
+            i = new Intent(this, PatientSignupByDoctor.class);
+            startActivity(i);
+        }
         return super.onOptionsItemSelected(item);
     }
 

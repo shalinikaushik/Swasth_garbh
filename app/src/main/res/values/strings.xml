@@ -64,7 +64,7 @@
         <item>Monthly</item>
     </string-array>
     <string name="title_activity_all_images_view" translatable="false">all_images_view</string>
-    <string name="address">Address</string>
+    <string name="address">Address/UHID</string>
     <string name="age_in_years">Age (in years)</string>
     <string name="last_mesntural_period">Last Menstrual Period</string>
     <string name="date">Date</string>
@@ -111,4 +111,8 @@
 
     <string name="action_settings" translatable="false">Settings</string>
     <string name="title_activity_patient_detail_in_doctor">patientDetailInDoctor</string>
+    <string name="address_or_UHID">address/UHID</string>
+    <string name="age">Age</string>
+    <string name="age_optional">Age (Optional)</string>
+    <string name="mobile_optional">Mobile (Optional)</string>
 </resources>
